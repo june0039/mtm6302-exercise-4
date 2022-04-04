@@ -7,16 +7,30 @@ By: Julie Juneau Student#040930994*/
     grid-gap:10px;
     padding: 10px;
     justify-content: center;
-    border: solid red 5px;
+    border: solid red 10px;
 }
 
 .countDown{
 
   background-color:aqua; 
-  width:50%;
+  width:20%;
+  height: 50px;
 
 }
 
 h1{
+    display:grid;
+    justify-content: center;
     color:blueviolet;
+}
+
+h2{
+    display:grid;
+    color:cadetblue;
+}
+.titleBox, .date{
+    display:grid;
+    Border: solid 5px aqua;
+    width:500px;
+    height:100px;
 }
