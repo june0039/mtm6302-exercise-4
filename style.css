@@ -5,12 +5,18 @@ By: Julie Juneau Student#040930994*/
 
     display:grid;
     grid-gap:10px;
-    margin: 10px;
+    padding: 10px;
     justify-content: center;
     border: solid red 5px;
 }
 
 .countDown{
- width:50%;
- 
+
+  background-color:aqua; 
+  width:50%;
+
+}
+
+h1{
+    color:blueviolet;
 }
