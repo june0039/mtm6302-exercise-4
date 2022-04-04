@@ -13,6 +13,9 @@ By: Julie Juneau Student#040930994*/
 .countDown{
 
   background-color:aqua; 
+  border: solid 5px black;
+  font-family: monospace;
+  font-style: bold;
   width:20%;
   height: 50px;
 
@@ -28,6 +31,7 @@ h2{
     display:grid;
     color:cadetblue;
 }
+
 .titleBox, .date{
     display:grid;
     Border: solid 5px aqua;
