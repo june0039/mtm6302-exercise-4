@@ -1,3 +1,16 @@
 /* Counter Assignment StyleSheet css
-By: Julie Juneau Student#040930994
+By: Julie Juneau Student#040930994*/
 
+.form{
+
+    display:grid;
+    grid-gap:10px;
+    margin: 10px;
+    justify-content: center;
+    border: solid red 5px;
+}
+
+.countDown{
+ width:50%;
+ 
+}
