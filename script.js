@@ -3,8 +3,10 @@ By: Julie Juneau Student # 040930994 */
 
 const $form = document.getElementById('form')
 const $countDown = document.getElementById('countDown')
-const day = document.getElementById('day')
+const $day = document.getElementById('day')
 const now = new Date();
+
+let start = now
 
 function setDays() {
     
@@ -21,6 +23,7 @@ for (let i = 1; i <= date.daysInMonth; i++){
     
 }
 
+/* Function when count down button is clicked */
 $countDown.addEventListener('submit', function (e) {
 
     e.preventDefault()
