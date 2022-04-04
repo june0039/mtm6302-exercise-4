@@ -1,6 +1,11 @@
 /* Counter Assignment StyleSheet css
 By: Julie Juneau Student#040930994*/
 
+body{
+    display: grid;
+
+}
+
 .form{
 
     display:grid;
@@ -12,6 +17,7 @@ By: Julie Juneau Student#040930994*/
 
 .countDown{
 
+  display:grid;
   background-color:aqua; 
   border: solid 5px black;
   font-family: monospace;

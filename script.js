@@ -25,13 +25,18 @@ $countDown.addEventListener('submit', function (e) {
 
     e.preventDefault()
 
-    const date = DateTime.fromObject({ year: $year.value })
-    /* Check if date is in the future and provide amount*/
-    if (date > now) {
-
-        const diff = date.diff(now, ['days', 'hours', 'minutes', 'seconds']).toObject()
-        $response.textContent = `${diff.days} days
-        ${diff.hours} hours ${diff.minutes} minutes`
-    }
+    function dateDiff (start, end) {
+  const diff = end - start > 0 ? end - start : 0
+  const format = (num) => num < 10 ? `0${num}` : num
+  
+  return {
+    days: format(Math.floor(diff / 1000 / 60 / 60 / 24)),
+    hours: format(Math.floor(diff / 1000 / 60 / 60 % 24)),
+    minutes: format(Math.floor(diff / 1000 / 60 % 60)),
+    seconds: format(Math.floor(diff / 1000 % 60))
+  }
+}
+    
+    
     
 })
