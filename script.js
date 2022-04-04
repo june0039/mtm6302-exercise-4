@@ -2,8 +2,9 @@
 By: Julie Juneau Student # 040930994 */
 
 const $form = document.getElementById('form')
+const $countDown = document.getElementById('countDown')
 const day = document.getElementById('day')
-const now = DateTime.local();
+const now = new Date();
 
 function setDays() {
     
@@ -20,7 +21,7 @@ for (let i = 1; i <= date.daysInMonth; i++){
     
 }
 
-$form.addEventListener('submit', function (e) {
+$countDown.addEventListener('submit', function (e) {
 
     e.preventDefault()
 
@@ -32,7 +33,5 @@ $form.addEventListener('submit', function (e) {
         $response.textContent = `${diff.days} days
         ${diff.hours} hours ${diff.minutes} minutes`
     }
-    
-}
     
 })
