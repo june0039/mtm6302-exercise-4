@@ -8,25 +8,37 @@ const now = new Date();
 
 let start = now
 
-function setDays() {
+if (localStorage.getItem('data') != undefined) {
+
+  let data = JSON.parse(localStorage.getItem('data'))
+
+  $form.elements.titleBox.value = data.title
+  $form.elements.date.value = data.date
+  
+}
+
+//function setDays() {
     
-    const date = DateTime.fromObject({year: $year.value, month:value })
+  //  const date = DateTime.fromObject({year: $year.value, month:value })
 
-}
 
-for (let i = 1; i <= date.daysInMonth; i++){
-    days.push('<option>${i}</option>')
-}
-{
 
-    $day.innerHTML = days.join('')
-    
-}
+//for (let i = 1; i <= date.daysInMonth; i++){
+    //days.push('<option>${i}</option>')
+
+
+    //$day.innerHTML = days.join('')
+  
 
 /* Function when count down button is clicked */
 $countDown.addEventListener('submit', function (e) {
 
-    e.preventDefault()
+  e.preventDefault()
+
+  const newDate = dateDiff(now, $form.elements.date.value) 
+  localStorage.setItem('newDate')
+  
+})
 
     function dateDiff (start, end) {
   const diff = end - start > 0 ? end - start : 0
@@ -42,4 +54,3 @@ $countDown.addEventListener('submit', function (e) {
     
     
     
-})
