@@ -44,3 +44,8 @@ h2{
     width:500px;
     height:100px;
 }
+
+.required #titleInput, #dateInput {
+
+    border: red;
+}
