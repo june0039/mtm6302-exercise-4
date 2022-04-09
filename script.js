@@ -5,6 +5,7 @@ const $form = document.getElementById('form')
 const $countDown = document.getElementById('countDown')
 const $day = document.getElementById('day')
 const now = new Date();
+const $userTitle = document.getElementById('userTitle')
 
 let start = now
 
@@ -12,7 +13,7 @@ if (localStorage.getItem('data') != undefined) {
 
   let data = JSON.parse(localStorage.getItem('data'))
 
-  $form.elements.titleBox.value = data.title
+  $form.elements.title.value = data.title
   $form.elements.date.value = data.date
   
 }
@@ -31,14 +32,30 @@ if (localStorage.getItem('data') != undefined) {
   
 
 /* Function when count down button is clicked */
-$countDown.addEventListener('submit', function (e) {
+$countDown.addEventListener('click', function (e) {
 
   e.preventDefault()
 
-  const newDate = dateDiff(now, $form.elements.date.value) 
-  localStorage.setItem('newDate')
-  
+  let newDate = dateDiff(now, new Date($form.elements.date.value))
+  localStorage.setItem('newDate', $form.elements.date.value)
+  localStorage.setItem('title', $form.elements.title.value)
+  $form.classList.add('hide')
+
+  setInterval(function () {
+    
+    newDate  = dateDiff(new Date(), new Date($form.elements.date.value))
+
+    $userTitle.innerHTML = `<h1>${$form.elements.title.value}</h1>
+    <p>${newDate.days} : ${newDate.hours} : ${newDate.minutes} : ${newDate.seconds} </p>
+    <div>
+    <span>days</span> <span>hours</span> <span>minutes</span> <span> seconds</span>
+    </div>
+    <button> Clear Countdown</button>`
+  }, 1000)
+
 })
+
+
 
     function dateDiff (start, end) {
   const diff = end - start > 0 ? end - start : 0
@@ -52,5 +69,13 @@ $countDown.addEventListener('submit', function (e) {
   }
 }
     
+//Display new form of countdown date and time with the title entered by the user
+
+//hide form
+//<h1 id="header"></h1>(from user input in titleBox)
+//<date>
+//<button id="clear"> Clear Countdown</button>
+//<div class="count" id="counter">
     
+
     
