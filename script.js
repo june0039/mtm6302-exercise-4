@@ -75,6 +75,8 @@ $countDown.addEventListener('click', function (e) {
 
 $clear.addEventListener('click', function (e) {
   
+  $form.elements.title.value = ''
+  
   $form.classList.remove('hide')
   $userTitle.classList.add('hide')
   
@@ -87,4 +89,3 @@ $clear.addEventListener('click', function (e) {
 
 
 
-    
