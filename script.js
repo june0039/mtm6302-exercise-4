@@ -3,7 +3,7 @@ By: Julie Juneau Student # 040930994 */
 
 const $form = document.getElementById('form')
 const $countDown = document.getElementById('countDown')
-const $day = document.getElementById('day')
+const $clear = document.getElementById('clear')
 const now = new Date();
 const $userTitle = document.getElementById('userTitle')
 
@@ -43,6 +43,8 @@ $countDown.addEventListener('click', function (e) {
 
   setInterval(function () {
     
+    //Display new form of countdown date and time with the title entered by the user
+
     newDate  = dateDiff(new Date(), new Date($form.elements.date.value))
 
     $userTitle.innerHTML = `<h1>${$form.elements.title.value}</h1>
@@ -50,12 +52,12 @@ $countDown.addEventListener('click', function (e) {
     <div>
     <span>days</span> <span>hours</span> <span>minutes</span> <span> seconds</span>
     </div>
-    <button> Clear Countdown</button>`
+    <button id="clear"> Clear Countdown</button>`
   }, 1000)
 
 })
 
-
+//Function to calculate the difference between todays date and the users input date
 
     function dateDiff (start, end) {
   const diff = end - start > 0 ? end - start : 0
@@ -69,13 +71,20 @@ $countDown.addEventListener('click', function (e) {
   }
 }
     
-//Display new form of countdown date and time with the title entered by the user
+//Clear button function to clear counter and data from local storage and display entry form again
 
-//hide form
-//<h1 id="header"></h1>(from user input in titleBox)
-//<date>
-//<button id="clear"> Clear Countdown</button>
-//<div class="count" id="counter">
-    
+$clear.addEventListener('click', function (e) {
+  
+  $form.classList.remove('hide')
+  $userTitle.classList.add('hide')
+  
+  localStorage.clear();
+
+
+
+})
+
+
+
 
     
