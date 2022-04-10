@@ -20,19 +20,12 @@ if (localStorage.getItem('data') != undefined) {
 
 //function setDays() {
     
-  //  const date = DateTime.fromObject({year: $year.value, month:value })
-
-
-
-//for (let i = 1; i <= date.daysInMonth; i++){
-    //days.push('<option>${i}</option>')
-
-
-    //$day.innerHTML = days.join('')
   
 
 /* Function when count down button is clicked */
-$countDown.addEventListener('click', function (e) {
+$countDown.addEventListener('click', function () {
+
+  
 
   e.preventDefault()
 
@@ -52,7 +45,7 @@ $countDown.addEventListener('click', function (e) {
     <div>
     <span>days</span> <span>hours</span> <span>minutes</span> <span> seconds</span>
     </div>
-    <button id="clear"> Clear Countdown</button>`
+    <button class="clearCount" id="clear"> Clear Countdown</button>`
   }, 1000)
 
 })
@@ -74,11 +67,13 @@ $countDown.addEventListener('click', function (e) {
 //Clear button function to clear counter and data from local storage and display entry form again
 
 $clear.addEventListener('click', function (e) {
+
+  let $clear = 1;
   
-  $form.elements.title.value = ''
-  
-  $form.classList.remove('hide')
-  $userTitle.classList.add('hide')
+  //$form.elements.title.value = ''
+
+ // $form.classList.remove('hide')
+ // $userTitle.classList.add('hide')
   
   localStorage.clear();
 
